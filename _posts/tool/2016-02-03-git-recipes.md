@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Git教程整理 - 快速入门
+title: Git教程整理
 category: 工具
 tags: Git
-keywords: Git，版本控制
-description: Git教程
+keywords:
+description:
 ---
 
 安装Git
