@@ -1,0 +1,33 @@
+permalink: /:year/:month/:day/:title.html
+markdown: kramdown
+pygments: true
+
+kramdown:
+  input: GFM
+
+# 作者信息
+author: 
+  name: 郭小成
+  email: letcheng@tcxiaoyi.com
+  link: http://yansu.org
+  weibo: http://weibo.com/letcheng
+  github: http://github.com/letcheng
+
+# 站点信息
+title: 郭小成的博客 
+description:  左手代码右手诗
+url: http://letchegn.github.io
+rss_url: /pages/atom.xml
+
+# avatar头像及Favicon
+avatar: http://7u2ho6.com1.z0.glb.clouddn.com/site-avatar.png
+favicon: http://7u2ho6.com1.z0.glb.clouddn.com/site-favicon.ico
+
+# google analytics 设置
+#ga:
+#  id: UA-54767140-1
+#  url: yansu.org
+
+# disqus 设置
+disqus:
+  shortname: letcheng-blog
