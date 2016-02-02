@@ -4,4 +4,4 @@
 
 ### 说明
 
-基于[3-Jekyll](https://github.com/P233/3-Jekyll)）
+基于[3-Jekyll](https://github.com/P233/3-Jekyll)
