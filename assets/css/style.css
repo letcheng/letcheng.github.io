@@ -34,6 +34,7 @@ html, body {
   height: 100%;
   margin: 0;
   font: 100 14px/1.5 Avenir, sans-serif;
+  font-family: Palatino, "Palatino Linotype", 'OFL Sorts Mill Goudy', 'OFL Sorts Mill Goudy TT', Georgia, serif;
   -webkit-font-smoothing: subpixel-antialiased;
   -webkit-text-size-adjust: none;
   overflow: hidden; }
