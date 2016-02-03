@@ -213,7 +213,7 @@ a {
   width: 420px;
   height: 100%;
   background: rgba(250, 250, 250, 0.95);
-  border-right: 1px solid #f60;
+  border-right: 1px solid #e5e8ec;
   float: left;
   position: relative;
   -webkit-user-select: none;
@@ -228,7 +228,7 @@ a {
 #search-form {
   width: 100%;
   height: 65px;
-  border-bottom: 1px solid #f60; }
+  border-bottom: 1px solid #e5e8ec; }
   @media screen and (max-width: 585px) {
     #search-form {
       height: 51px;
@@ -414,7 +414,7 @@ h1, h2, h3, h4, h5, h6 {
 #post__content img {
   max-width: 100%;
   max-height: 500px;
-  border: 2px solid #f60;
+  border: 2px solid #e5e8ec;
   border-radius: 5px; }
 
 strong {
@@ -423,7 +423,7 @@ strong {
 blockquote {
   margin: 1.5em 0 1.5em 2em;
   padding-left: .5em;
-  border-left: 5px solid #f60; }
+  border-left: 5px solid #e5e8ec; }
 
 kbd {
   padding: .2em .3em .1em;
@@ -480,8 +480,8 @@ iframe {
   height: 100%;
   padding-top: 30px;
   background: rgba(250, 250, 250, 0.9);
-  border-top: 1px solid #f60;
-  border-left: 1px solid #f60;
+  border-top: 1px solid #e5e8ec;
+  border-left: 1px solid #e5e8ec;
   border-radius: 10px 0 0 0;
   display: block;
   overflow-y: scroll;
@@ -926,7 +926,7 @@ iframe {
 pre {
   padding: 1em;
   font: .9em/1.5 Consolas, Monaco, 'Andale Mono', monospace;
-  border: 1px solid #f60;
+  border: 1px solid #e5e8ec;
   border-radius: 3px;
   background-color: #fdfdfd;
   background-image: -webkit-linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
@@ -941,7 +941,7 @@ pre {
   pre::-webkit-scrollbar {
     height: 7px; }
   pre::-webkit-scrollbar-thumb {
-    background: #f60; }
+    background: #e5e8ec; }
     pre::-webkit-scrollbar-thumb:hover {
       background: #d6dbe1; }
 
@@ -966,7 +966,7 @@ pre > code {
   color: black;
   font: .85em Consolas, Monaco, 'Andale Mono', monospace;
   background: #f7f7f7;
-  border: 1px solid #f60;
+  border: 1px solid #e5e8ec;
   border-radius: .25em;
   vertical-align: 2px; }
 
