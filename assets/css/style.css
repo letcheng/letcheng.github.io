@@ -962,9 +962,10 @@ pre > code {
 /* Inline code */
 :not(pre) > code {
   padding: .25em .5em .1em;
+  margin:0 .3em;
   color: black;
   font: .85em Consolas, Monaco, 'Andale Mono', monospace;
-  background: #fafafa;
+  background: #f7f7f7;
   border: 1px solid #e5e8ec;
   border-radius: .25em;
   vertical-align: 2px; }
