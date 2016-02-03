@@ -1,46 +1,37 @@
 ---
 layout: post
-title: Git教程整理
+title: Git 快速入门
 category: 工具
 tags: Git
-keywords:
-description:
+keywords: Git，版本控制，教程
+description: Git 快速入门
 ---
 
-安装Git
----------
- - Mac用户：Xcode Command Line Tools自带Git (`xcode-select --install` )
- - Linux用户：`sudo apt-get install git`
- - Windows用户：下载[Git SCM](git-for-windows.github.io)
-	- 对于Windows用户，安装后如果希望在全局的cmd中使用git，需要把git.exe加入PATH环境变量中，或在Git Bash中使用Git。
 
-检出仓库
-----
+###下载与安装
+ - Mac用户：Xcode Command Line Tools自带Git 
+ - Linux用户：`sudo yum install git`
+ - Windows用户：下载[Git SCM](http://git-for-windows.github.io)
+
+###检出仓库
 执行如下命令以创建一个本地仓库的克隆版本：
 `git clone /path/to/repository`
-
 如果是远端服务器上的仓库，你的命令会是这个样子：
 `git clone username@host:/path/to/repository` （通过SSH）
 或者：
 `git clone https:/path/to/repository.git` （通过https）
 
-比如说`git clone https://github.com/geeeeeeeeek/git-recipes.git`可以将git教程clone到你指定的目录。
-
-创建新仓库
---------
+###创建新仓库
 创建新文件夹，打开，然后执行 `git init`以创建新的 git 仓库。
-
 > 下面每一步中，你都可以通过`git status`来查看你的git仓库状态。
 
-工作流
----
+###工作流
 你的本地仓库由 git 维护的三棵“树”组成。第一个是你的 `工作目录`，它持有实际文件；第二个是 `缓存区(Index)`，它像个缓存区域，临时保存你的改动；最后是 `HEAD`，指向你最近一次提交后的结果。
-![enter image description here](http://www.bootcss.com/p/git-guide/img/trees.png)
+![git工作流程](http://www.bootcss.com/p/git-guide/img/trees.png)
 
 > 事实上，第三个阶段是commit history的图。HEAD一般是指向最新一次commit的引用。现在暂时不必究其细节。
 
-添加与提交
-----
+###添加与提交
 你可以计划改动（把它们添加到缓存区），使用如下命令：
 ```
 git add < filename >
@@ -68,8 +59,5 @@ git remote add origin <server>
 ```
 如此你就能够将你的改动推送到所添加的服务器上去了。
 
->  - 这里origin是< server >的别名，取什么名字都可以，你也可以在push时将< server >替换为origin。但为了以后push方便，我们第一次一般都会先remote add。
+>  - 这里origin是< server >的别名，取什么名字都可以，你也可以在push时将< server 替换为origin。但为了以后push方便，我们第一次一般都会先remote add。
 >  - 如果你还没有git仓库，可以在Github等代码托管平台上创建一个空(不要自动生成README.md)的repository，然后将代码push到远端仓库。
-
-
-#### 至此，你应该可以顺利地提交你的项目了。在下一节中，我们将涉及更多的命令，来完成更有用的操作。比如从远端的仓库拉取更新并且合并到你的本地，如何通过分支多人协作，如何处理不同分支的冲突等等。
