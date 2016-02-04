@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Git 基本用户一览
+title: Git 基本用法一览
 category: 工具
 tags: Git
 keywords: Git
-description:  Git 基本用户一览
+description:  Git 基本用法一览
 ---
 
 
