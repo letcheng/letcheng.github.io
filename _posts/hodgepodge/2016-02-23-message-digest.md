@@ -9,13 +9,13 @@ description: MessageDigest类的使用
 
 
 
-### 简介
+## MessageDigest简介
  - MessageDigest 类是一个引擎类，它是为了提供诸如 SHA1 或 MD5 等密码上安全的报文摘要功能而设计的。密码上安全的报文摘要可接受任意大小的输入（一个字节数组），并产生固定大小的输出，该输出称为一个摘要或散列。摘要具有以下属性
-  > *无法通过计算找到两个散列成相同值的报文。
-  > *摘要不反映任何与输入有关的内容。
- -使用报文摘要可以生成数据唯一且可靠的标识符。有时它们被称为数据的“数字指纹”。
+  > * 无法通过计算找到两个散列成相同值的报文。
+  > * 摘要不反映任何与输入有关的内容。
+ - 使用报文摘要可以生成数据唯一且可靠的标识符。有时它们被称为数据的“数字指纹”。
 
-### 创建MessageDigest实例
+## 创建MessageDigest实例
 
  ```
  public static MessageDigest getInstance(String algorithm)
@@ -28,8 +28,14 @@ description: MessageDigest类的使用
 ### 更新报文摘要对象
 
  ```
-  public void update(byte input)     
+  public void update(byte input)
+ ```
+ 
+ ``` 
   public void update(byte[] input)     
+ ```
+ 
+ ``` 
   public void update(byte[] input, int offset, int len)
  ```
  
@@ -37,7 +43,13 @@ description: MessageDigest类的使用
 
  ```
   public byte[] digest()
+ ```
+ 
+ ``` 
   public byte[] digest(byte[] input)
+ ```
+ 
+ ```  
   public int digest(byte[] buf, int offset, int len)
  ```
  
