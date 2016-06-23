@@ -17,31 +17,25 @@ description: MessageDigest类的使用
 ## 创建MessageDigest实例
 
 ```java
-
  public static MessageDigest getInstance(String algorithm)
  public static MessageDigest getInstance(String algorithm, String provider)
- 
 ```
 
 ## 更新报文摘要对象
 
- ```java
- 
+```java
   public void update(byte input)
-  public void update(byte[] input)     
-  public void update(byte[] input, int offset, int len)
-  
- ```
+  public void update(byte[] input)
+  public void update(byte[] input, int offset, int len) 
+```
 
 ## 计算摘要
 
- ```java
- 
+```java
   public byte[] digest()
-  public byte[] digest(byte[] input)  
+  public byte[] digest(byte[] input)
   public int digest(byte[] buf, int offset, int len)
-  
- ```
+```
 
 ## Attention
 
