@@ -7,8 +7,6 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://letcheng.com" # the base hostname & protocol for your site
 rss_url: /pages/feed.xml
 author: letcheng
-twitter:
-  username: letcheng_zh
 
 # Sidebar filter
 # Choose 'tag' or 'category' as filter in sidebar.
