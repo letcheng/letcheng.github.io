@@ -1,8 +1,8 @@
 ---
-layout: post
+layout: default
 ---
 
-## 关于我
+#### 关于我
 
 * 英文名：letcheng
 
