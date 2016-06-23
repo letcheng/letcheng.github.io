@@ -1,33 +1,48 @@
-permalink: /:year/:month/:day/:title.html
-markdown: kramdown
-pygments: true
+# Site settings
+title: 郭小成的个人博客
+email: letcheng@ruyuapp.com
+description: > # this means to ignore newlines until "baseurl:"
+ 郭小成的个人博客
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://letcheng.com" # the base hostname & protocol for your site
+rss_url: /pages/feed.xml
+author: letcheng
 
-kramdown:
-  input: GFM
+# Sidebar filter
+# Choose 'tag' or 'category' as filter in sidebar.
+filter: 'category'
 
-# 作者信息
-author: 
-  name: 郭小成
-  email: letcheng@tcxiaoyi.com
-  link: http://yansu.org
-  weibo: http://weibo.com/letcheng
-  github: http://github.com/letcheng
-
-# 站点信息
-title: 郭小成的博客 
-description:  左手代码右手诗
-url: http://letcheng.github.io
-rss_url: /pages/atom.xml
+# Social account
+#twitter: masonsuyan
+weibo: letcheng
+github: letcheng
+# codepen:  username
+# dribbble: username
 
 # avatar头像及Favicon
 avatar: http://luckingus.b0.upaiyun.com/blog/user/3.png
 favicon: http://ruyuapp.b0.upaiyun.com/letcheng/site-avatar.ico
+
+# disqus 设置
+disqus:
+  shortname: letchengblog
 
 # google analytics 设置
 #ga:
 #  id: UA-54767140-1
 #  url: yansu.org
 
-# disqus 设置
-disqus:
-  shortname: letchengblog
+# Build settings
+permalink: /:year/:month/:day/:title.html
+markdown: kramdown
+highlighter: rouge
+sass:
+  style: compressed
+
+# Jekyll Plugin
+# https://help.github.com/articles/adding-jekyll-plugins-to-a-github-pages-site/
+gems:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
+
