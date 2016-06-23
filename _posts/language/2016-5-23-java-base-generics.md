@@ -7,4 +7,4 @@ keywords: Java
 description: Java 泛型
 ---
 
-###
+### 泛型的作用
