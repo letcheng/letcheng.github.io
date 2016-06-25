@@ -1,10 +1,10 @@
 ---
 layout: post
-title: MessageDigest类的使用
-category: 大杂烩
+title: Java MessageDigest类的使用
+category: 编程语言
 tags: Java
 keywords: 散列，MessageDigest
-description: MessageDigest类的使用
+description: Java MessageDigest类的使用
 ---
 
 
