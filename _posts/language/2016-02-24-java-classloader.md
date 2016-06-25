@@ -7,7 +7,7 @@ keywords: Java
 description: Java 类加载器深入理解
 ---
 
-### 类加载机制
+### Java 的执行过程
 
 1. 首先根据java后的运行模式配置项或<JAVA_HOME>/jre/lib/i386/jvm.cfg来决定是以client还是server模式运行JVM，然后加载<JAVA_HOME>/jre/bin/client或server/jvm.dll，并开始启动JVM；
 
@@ -21,10 +21,7 @@ description: Java 类加载器深入理解
 
 
 
-
-JVM 是通过 一个称为 ClassLoader 的东西 来加载 class 文件，每当 JVM 启动的时候，就会产生 三个 ClassLoader，它们分别是Bootstrap Loader， ExtClassLoader 和 AppClassLoader。 这三个 ClassLoader 的作用是不同的，它们所加载的class 文件也不同。
-
-
+### 四种类加载器
 
 - BootStrap Loader：作为JVM的一部分无法在应用程序中直接引用，由C/C++实现。负责加载 ① \<JAVA_HOME\>/jre/lib目录 或 ② -Xbootclasspath参数所指定的目录 或 ③ 系统属性sun.boot.class.path指定的目录 中特定名称的jar包。
 
