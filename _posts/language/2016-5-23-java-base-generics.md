@@ -98,6 +98,7 @@ description: Java 泛型的使用技巧
 
 - 任何基本类型都不能作为类型参数
 - 重载
+
 ```java
     //Compile Error. 编译不能通过
     public class UseList<W,T>{
