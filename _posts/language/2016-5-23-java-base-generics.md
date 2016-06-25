@@ -23,6 +23,7 @@ description: Java 泛型的使用技巧
      }
 ```
 - 泛型接口
+
 ```java
    public interface Generator<T> {
          public T next();
@@ -38,8 +39,10 @@ description: Java 泛型的使用技巧
          }
      }
 ```
+
 - 泛型方法
+
 ```java
-    public <P> void fun(P p){     
+    public <P> void func(P p){     
     }
 ```
