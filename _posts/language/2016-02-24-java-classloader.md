@@ -26,9 +26,9 @@ JVM 是通过 一个称为 ClassLoader 的东西 来加载 class 文件，每当
 
 
 
-- BootStrap Loader：作为JVM的一部分无法在应用程序中直接引用，由C/C++实现。负责加载①\<JAVA_HOME\>/jre/lib目录 或 ②-Xbootclasspath参数所指定的目录 或 ③系统属性sun.boot.class.path指定的目录 中特定名称的jar包。在JVM启动时将通过Bootstrap ClassLoader加载rt.jar，并初始化sun.misc.Launcher从而创建Extension ClassLoader和System ClassLoader实例，和将System ClassLoader实例设置为主线程的默认Context ClassLoader（线程上下文加载器）。
+- BootStrap Loader：作为JVM的一部分无法在应用程序中直接引用，由C/C++实现。负责加载 ① \<JAVA_HOME\>/jre/lib目录 或 ② -Xbootclasspath参数所指定的目录 或 ③ 系统属性sun.boot.class.path指定的目录 中特定名称的jar包。
 
-_注意：Bootstrap ClassLoader只会加载特定名称的类库，如rt.jar等。假如我们自己定义一个jar类库丢进<JAVA_HOME>/jre/lib目录下也不会被加载的！_
+> 注意：Bootstrap ClassLoader只会加载特定名称的类库，如rt.jar等。假如我们自己定义一个jar类库丢进\<JAVA_HOME\>/jre/lib目录下也不会被加载的！
 
 ```java
     @Test
