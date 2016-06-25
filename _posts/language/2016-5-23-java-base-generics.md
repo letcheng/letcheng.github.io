@@ -49,11 +49,11 @@ description: Java 泛型的使用技巧
 
 ### 通配符
    
-   ```java
+```java
     <? extends Fruit>
     <? super Apple>
     <?>
-   ```
+```
 
 ### 泛型擦擦
 
@@ -70,6 +70,29 @@ description: Java 泛型的使用技巧
     T[] array = (T) new Object[SIZE];
 ```
 
+- 奇淫技巧
+ 
+    * 解决不能使用 new T()的问题，可以考虑工厂类解决
+
+```java
+  interface IFactory<T> {
+      T create();
+  }
+  
+  class Foo2<T> {
+      private T x;
+  
+      public <F extends IFactory<T>> Foo2(F factory) {
+          x = factory.create(); //避免使用new T();
+      }
+  }
+  // 使用
+  new Foo2<Integer>(new IFactory<Integer>(){
+        Integer create(){
+            return new Integer(0);
+        }
+  })
+```
 
 ### 其他注意的问题
 
