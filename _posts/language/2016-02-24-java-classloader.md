@@ -20,7 +20,7 @@ description: Java 类加载器深入理解
 5. 然后AppClassLoader实例就开始加载Main.class及其所依赖的类库了
 
 
-![类加载机制](http://images.cnitblog.com/blog/347002/201502/110912451518649.gif)
+
 
 JVM 是通过 一个称为 ClassLoader 的东西 来加载 class 文件，每当 JVM 启动的时候，就会产生 三个 ClassLoader，它们分别是Bootstrap Loader， ExtClassLoader 和 AppClassLoader。 这三个 ClassLoader 的作用是不同的，它们所加载的class 文件也不同。
 
@@ -48,13 +48,17 @@ JVM 是通过 一个称为 ClassLoader 的东西 来加载 class 文件，每当
      file:/C:/Java/jdk1.7.0_79/jre/classes*/
 ```
 
-- ExtClassLoader：扩展类加载器，负责加载 <JAVA_HOME>/lib/ext 下的类库，或者被系统变量 java.ext.dirs 指定的路径下的所有的类库
-- AppClassLoader：应用程序类加载器，负责加载用户指定的classpath下的类加载器
+- ExtClassLoader：仅含一个实例，由 sun.misc.Launcher$ExtClassLoader 实现，负责加载 ① \<JAVA_HOME\>/jre/lib/ext目录 或 ② 系统属性java.ext.dirs所指定的目录中的所有类库。
 
+- AppClassLoader：仅含一个实例，由 sun.misc.Launcher$AppClassLoader 实现，可通过 java.lang.ClassLoader.getSystemClassLoader 获取。负责加载 ① 系统环境变量 ClassPath 或 ② -cp 或 ③ 系统属性 java.class.path 所指定的目录下的类库。
+
+- Context ClassLoader（线程上下文加载器）：默认为System ClassLoader，可通过Thread.currentThread().setContextClassLoader(ClassLoader)来设置，可通过ClassLoader Thread.currentThread().getContextClassLoader()来获取。每个线程均将Context ClassLoader预先设置为父线程的Context ClassLoader。该类加载器主要用于打破双亲委派模型，容许父类加载器通过子类加载器加载所需的类库。
 
 ### 双亲委派模型
 
+ 当一个类加载器收到类加载的请求，首先会将请求委派给父类加载器，这样一层一层委派到Bootstrap ClassLoader。然后加载器根据请求尝试搜索和加载类，若搜索失败则向子类加载器反馈信息（抛出ClassNotFoundException），然后子类加载器才尝试自己去加载。JAVA中采用组合的方式实现双亲委派模型，而不是继承的方式。
 
+ ![类加载机制](http://images.cnitblog.com/blog/347002/201502/110912451518649.gif)
 
 ### 自定义类加载器
 
