@@ -46,3 +46,39 @@ description: Java 泛型的使用技巧
     public <P> void func(P p){     
     }
 ```
+
+### 通配符
+   
+   ```java
+    <? extends Fruit>
+    <? super Apple>
+    <?>
+   ```
+
+### 泛型擦擦
+
+泛型是JDK1.5才出现的，所以为了兼容，采用了擦除的方式实现。泛型类型只有在**静态类型检查**期间才出现，在此之后，程序中所有泛型类型都被擦除，替换为他们的非泛型上界。
+
+- 导致的问题
+
+```java
+    //以下几种情况都编译不通过
+    if (arg instanceof T) {
+    }
+    T var = new T();
+    T[] array = new T[SIZE];
+    T[] array = (T) new Object[SIZE];
+```
+
+
+### 其他注意的问题
+
+- 任何基本类型都不能作为类型参数
+- 重载
+```java
+    //Compile Error. 编译不能通过
+    public class UseList<W,T>{
+        void f(List<T> v){}
+        void f(List<W> v){}
+    }
+```
