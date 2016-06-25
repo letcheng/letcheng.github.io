@@ -57,6 +57,66 @@ description: Java 类加载器深入理解
 
  ![类加载机制](http://images.cnitblog.com/blog/347002/201502/110912451518649.gif)
 
+### 手动加载类
+
+1. 利用现有的类加载器
+
+```java
+    // 通过当前类的类加载器加载（会执行初始化）
+    Class.forName("二进制名称");
+    Class.forName("二进制名称", true, this.getClass().getClassLoader());
+    
+    // 通过当前类的类加载器加载（不会执行初始化）
+    Class.forName("二进制名称", false, this.getClass().getClassLoader());
+    this.getClass().loadClass("二进制名称");
+    
+    // 通过系统类加载器加载（不会执行初始化）
+    ClassLoader.getSystemClassLoader().loadClass("二进制名称");
+    
+    // 通过线程上下文类加载器加载（不会执行初始化）
+    Thread.currentThread().getContextClassLoader().loadClass("二进制名称");
+```
+
+2. 利用URLClassLoader
+
+```java
+    URL[] baseUrls = {new URL("file:/d:/testLib/")};
+    URLClassLoader loader = new URLClassLoader(baseUrl, ClassLoader.getContextClassLoader());
+    Class clazz = loader.loadClass("com.fsjohnhuang.HelloWorld");
+```
+
 ### 自定义类加载器
 
+```java
+    public class MyClassLoader extends ClassLoader{
+      private String dir;
+    
+      public MyClassLoader(String dir, ClassLoader parent){
+        super(parent);
+        this.dir = dir;
+      }
+      
+      @Override
+      protect Class<?> findClass(String binaryName) throws ClassNotFoundException{
+        String pathSegmentSeperator = System.getProperty("file.separator");
+        String path = binaryName.replace(".", pathSegmentSeperator ).concat(".class");
+    
+        FileInputStream fis = new FileInputStream(dir + pathSegmentSeperator  + path);
+        byte[] b = new byte[fis.available()];
+        fis.read(b, 0, b.length);
+        fis.close();
+        return defineClass(binaryName, b, 0, b.length);
+      }
+    }
+```
+
+### 加载图片、视频等非类资源
+
+ ClassLoader除了用于加载类外，还可以用于加载图片、视频等非类资源。同样是采用双亲委派模型将加载资源的请求传递到顶层的Bootstrap ClassLoader，在其管辖的目录下搜索资源，若失败才逐层返回逐层搜索。
+
+```java
+    URL getResource(String name)
+    InputStream getResourceAsStream(String name)
+    Enumeration<URL> getResources(String name)
+```
 
