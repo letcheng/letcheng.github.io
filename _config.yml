@@ -4,7 +4,7 @@ email: letcheng@ruyuapp.com
 description: > # this means to ignore newlines until "baseurl:"
  郭小成的个人博客
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://letcheng.com" # the base hostname & protocol for your site
+url: "http://letcheng.github.io" # the base hostname & protocol for your site
 rss_url: /pages/feed.xml
 author: letcheng
 
