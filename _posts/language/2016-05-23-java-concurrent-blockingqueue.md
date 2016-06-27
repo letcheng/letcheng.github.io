@@ -1,15 +1,17 @@
 ---
 layout: post
-title: Java BlockingQueue 和 ConcurrentLinkedQueue 分析
+title: Java 并发队列分析
 category: 编程语言
 tags: Java
 keywords: Java
 description:  Java BlockingQueue 和 ConcurrentLinkedQueue 分析
 ---
 
-### 为什么 BlockingQueue ?
+### 阻塞式队列和非阻塞式队列 ?
 
-当使用 BlockingQueue 的时候，我们再也不需要关心什么时候需要阻塞线程，什么时候需要唤醒线程,是生产者和消费者模型的首选。
+使用阻塞算法的队列可以用一个锁（入队和出队用同一把锁）或两个锁（入队和出队用不同的锁）等方式来实现，而非阻塞的实现方式则可以使用循环CAS的方式来实现，
+前者主要是 BlockingQueue及其是实现类，后者则是ConcurrentLinkedQueue。
+
 
 ### BlockingQueue 常用的方法
 
@@ -46,6 +48,3 @@ int drainTo(Collection<? super E>, int)
     ArrayBlockingQueue实现的队列中必须指定队列的大小；
     LinkedBlockingQueue实现的队列中可以不指定队列的大小，但是默认是Integer.MAX_VALUE
     
-### 非阻塞式的并发队列
-
-使用阻塞算法的队列可以用一个锁（入队和出队用同一把锁）或两个锁（入队和出队用不同的锁）等方式来实现，而非阻塞的实现方式则可以使用循环CAS的方式来实现，
