@@ -70,7 +70,7 @@ public class MyJob implements org.quartz.Job {
 }
 ```
 
-4、 设置 JobDetail 和 Trigger
+4. 设置 JobDetail 和 Trigger
 
 ```java
 // define the job and tie it to our MyJob class
