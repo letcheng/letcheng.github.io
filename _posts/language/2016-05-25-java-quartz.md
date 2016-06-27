@@ -41,7 +41,7 @@ public static void main(String args[]){
 
 官网：[http://www.quartz-scheduler.org/](http://www.quartz-scheduler.org/)
 
-1. Maven库
+* Maven库
 
 ```
   <dependency>
@@ -51,14 +51,14 @@ public static void main(String args[]){
   </dependency>
 ```
 
-2. 初始化和启动 Scheduler
+* 初始化和启动 Scheduler
 
 ```java
   Scheduler scheduler = StdSchedulerFactory.getDefaultScheduler();
   scheduler.start();
 ```
 
-3. 实现任务逻辑
+* 实现任务逻辑
 
 ```java
 public class MyJob implements org.quartz.Job {
@@ -70,7 +70,7 @@ public class MyJob implements org.quartz.Job {
 }
 ```
 
-4. 设置 JobDetail 和 Trigger
+* 设置 JobDetail 和 Trigger
 
 ```java
 // define the job and tie it to our MyJob class
