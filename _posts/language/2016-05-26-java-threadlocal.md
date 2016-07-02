@@ -10,7 +10,7 @@ description: Java ThreadLocal
 ### 原理
 
 由于 Java 的堆内存是线程共享的，所以在多线程中的变量是共享变量。为了防止变量在临界区的读写造成不一致的情况，所以同步是并发一个重要的主题。
-但是如果多个线程之间的变量并不需要彼此交互变量，可以使用 ThreadLocal 实现，使其变成线程安全。
+但是如果多个线程之间的变量并不需要彼此交互，可以使用 ThreadLocal，使其变成线程安全。
 ![](http://cdn.taotaoshenqi.com/letcheng/threadlocal.png)
 
 - 核心方法
@@ -51,6 +51,7 @@ private T setInitialValue() {
     return value;
 }
 ```
+
 ### 应用
 
 获得JDBC请求，每个请求应该是线程独立的，多个线程之间不需要进行Connection共享变量
