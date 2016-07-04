@@ -52,11 +52,6 @@ public static void main(String args[])
 ### 动态代理
 
 ```java
-作者：雨夜偷牛的人
-链接：https://www.zhihu.com/question/20794107/answer/23330381
-来源：知乎
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
-
 public class ProxyHandler implements InvocationHandler
 {
     private Object tar;
