@@ -29,6 +29,10 @@ description: Java 并发-ForkJoin框架
 
 ![](http://dl.iteye.com/upload/attachment/234124/8703a34a-9f05-37a5-bb08-c135bb5bffc8.jpg)
 
+* RecursiveAction 用于任务没有返回结果的场景
+
+* RecursiveTask 用于任务又返回结果的场景
+
 ## 典型用法
 
 ```
