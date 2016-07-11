@@ -151,5 +151,37 @@ Object value = field.get(objectInstance);
 field.set(objetInstance, value);
 ```
 
-传入Field.get()/Field.set()方法的参数objetInstance应该是拥有指定变量的类的实例。在上述的例子中传入的参数是MyObject类的实例，是因为someField是MyObject类的实例。
-如果变量是静态变量的话(public static)那么在调用Field.get()/Field.set()方法的时候传入null做为参数而不用传递拥有该变量的类的实例。
+* 传入Field.get()/Field.set()方法的参数objetInstance应该是拥有指定变量的类的实例。在上述的例子中传入的参数是MyObject类的实例，是因为someField是MyObject类的实例。
+* 如果变量是静态变量的话(public static)那么在调用Field.get()/Field.set()方法的时候传入**null做为参数**而不用传递拥有该变量的类的实例。
+
+
+## 方法
+
+使用Java反射你可以在运行期检查一个方法的信息以及在运行期调用这个方法。
+
+### 获取 Method 对象
+
+```java
+Method[] methods = clazz.getMethods(); // 获取公共的方法
+Methd method = clazz.getMethod("dosomething",new Class[]{String.class}); // 获取某个方法，方法名和参数
+```
+
+如果根据给定的方法名称以及参数类型无法匹配到相应的方法，则会抛出 **NoSuchMethodException**。
+如果你想要获取的方法没有参数，那么在调用getMethod()方法时第二个参数传入null即可。
+```java
+Methd method = clazz.getMethod("dosomething",null); // 无参数
+```
+
+### 获取方法的参数与返回类型
+
+```java
+Class[] parameterTypes = method.getParameterTypes();
+Class returnType = method.getReturnType();
+```
+
+### 通过 Method 调用方法
+
+```java
+Method method = MyObject.class.getMethod("doSomething", String.class);
+Object returnValue = method.invoke(new MyObject(), "parameter-value1"); // 如果是静态方法，第一个参数传 null
+```
