@@ -51,5 +51,9 @@ Result solve(Problem problem) {
 Fork操作将会启动一个新的并行fork/join子任务。Join操作会一直等待直到所有的子任务都结束。Fork/Join算法，如同其他分治算法一样，总是会递归的、反复的划分子任务，直到这些子任务可以用足够简单的、短小的顺序方法来执行。
 
 
-##　异常处理
+## Fork/Join 框架实现原理
+
+ForkJoinPool 由 **ForkJoinTask** 数组和 **ForkJoinWorkerThread** 数组组成，ForkJoinTask 数组负责存放程序提交给 ForkJoinPool 的任务，而 ForkJoinWorkerThread 数组负责执行这些任务。
+
+
 
