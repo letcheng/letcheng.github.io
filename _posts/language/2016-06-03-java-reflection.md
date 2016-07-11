@@ -98,12 +98,6 @@ Class[] interfaces = clazz.getInterfaces();
 Method[] methods = clazz.getMethods();
 ```
 
-### 变量
-
-```java
-Field[] methods = clazz.getFields();
-```
-
 ### 注解
 
 ```java
@@ -120,7 +114,7 @@ Annotation[] annotations = clazz.getAnnotations();
 Constructor[] constructors = clazz.getConstructors();
 ```
 
-返回的Constructor数组包含每一个声明为公有的（Public）构造方法。
+返回的Constructor数组包含每一个声明为**公有的**（Public）构造方法。
 
 如果你知道你要访问的构造方法的方法参数类型，你可以用下面的方法获取指定的构造方法，这例子返回的构造方法的方法参数为String类型：
 
@@ -128,7 +122,7 @@ Constructor[] constructors = clazz.getConstructors();
 Constructor constructor = clazz.getConstructor(new Class[]{String.class})
 ```
 
-如果没有指定的构造方法能满足匹配的方法参数则会抛出：NoSuchMethodException。
+如果没有指定的构造方法能满足匹配的方法参数则会抛出：**NoSuchMethodException**。
 
 ### 获取构造方法的参数
 
@@ -145,3 +139,43 @@ MyObject myObject = (MyObject) constructor.newInstance("constructor-arg1");
 ```
 
 constructor.newInstance()方法的方法参数是一个可变参数列表，但是当你调用构造方法的时候你必须提供精确的参数，即形参与实参必须一一对应。在这个例子中构造方法需要一个String类型的参数，那我们在调用newInstance方法的时候就必须传入一个String类型的参数。
+
+## 变量
+
+使用Java反射机制你可以运行期检查一个类的变量信息(成员变量)或者获取或者设置变量的值。
+
+### 获取 Field 对象
+
+```java
+Field[] fields = clazz.getFields();
+```
+
+返回的Field对象数组包含了指定类中声明为**公有的**(public)的所有变量集合。
+
+如果你知道你要访问的变量名称，你可以通过如下的方式获取指定的变量：
+
+```java
+Field field = clazz.getField("someField");
+```
+
+在调用getField()方法时，如果根据给定的方法参数没有找到对应的变量，那么就会抛出**NoSuchFieldException**。
+
+### 获取变量名称和类型
+
+```java
+String fieldName = field.getName();
+Object fieldType = field.getType();
+```
+
+### 调用Field.get()或Field.set()方法
+
+```java
+Class clazz = MyObject.class
+Field field = clazz.getField("someField");
+MyObject objectInstance = new MyObject();
+Object value = field.get(objectInstance);
+field.set(objetInstance, value);
+```
+
+传入Field.get()/Field.set()方法的参数objetInstance应该是拥有指定变量的类的实例。在上述的例子中传入的参数是MyObject类的实例，是因为someField是MyObject类的实例。
+如果变量是静态变量的话(public static)那么在调用Field.get()/Field.set()方法的时候传入null做为参数而不用传递拥有该变量的类的实例。
