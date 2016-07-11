@@ -88,9 +88,7 @@ Class[] interfaces = clazz.getInterfaces();
 
 通过如下方式访问一个类的构造方法。
 
-```java
-Constructor[] constructors = clazz.getConstructors();
-```
+
 
 ### 方法
 
@@ -111,3 +109,39 @@ Field[] methods = clazz.getFields();
 ```java
 Annotation[] annotations = clazz.getAnnotations();
 ```
+
+## 构造器
+
+利用Java的反射机制你可以检查一个类的构造方法，并且可以在运行期创建一个对象。这些功能都是通过java.lang.reflect.Constructor这个类实现的。
+
+### 获取 Constructor 对象
+
+```java
+Constructor[] constructors = clazz.getConstructors();
+```
+
+返回的Constructor数组包含每一个声明为公有的（Public）构造方法。
+
+如果你知道你要访问的构造方法的方法参数类型，你可以用下面的方法获取指定的构造方法，这例子返回的构造方法的方法参数为String类型：
+
+```java
+Constructor constructor = clazz.getConstructor(new Class[]{String.class})
+```
+
+如果没有指定的构造方法能满足匹配的方法参数则会抛出：NoSuchMethodException。
+
+### 获取构造方法的参数
+
+```java
+Constructor constructor = ... //获取Constructor对象
+Class[] parameterTypes = constructor.getParameterTypes();
+```
+
+### 利用Constructor对象实例化一个类
+
+```java
+Constructor constructor = MyObject.class.getConstructor(String.class);
+MyObject myObject = (MyObject) constructor.newInstance("constructor-arg1");
+```
+
+constructor.newInstance()方法的方法参数是一个可变参数列表，但是当你调用构造方法的时候你必须提供精确的参数，即形参与实参必须一一对应。在这个例子中构造方法需要一个String类型的参数，那我们在调用newInstance方法的时候就必须传入一个String类型的参数。
