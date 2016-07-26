@@ -24,4 +24,29 @@ public static double random() { //java.lang.Math.Random 的源代码
 }
 ```
 
+### 随机数的生成 （携程面试题）
+
+随机生成 100 个随机数(1,100)
+
+从后面一直往前面确定随机数
+
+```java
+   int nums[] = {1,2,3...100};
+   for(int i=nums.length-1;i>0;i--){
+       int rand = new Random().nextInt(i); // Math.floor(Math.random()*i)
+       int tmp = nums[i];
+       nums[i] = nums[rand];
+       nums[rand] = tmp;
+   }
+```
+
+```java
+    int nums[] = {1,2,3...100};
+    for(int i=0;i<nums.length;i++){
+        int rand = i + new Random().nextInt(nums.length - i);
+        int tmp = nums[i];
+        nums[i] = nums[rand];
+        nums[rand] = tmp;
+    }
+```
 
