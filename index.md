@@ -4,7 +4,7 @@ title: 关于我
 ---
 * 英文名：letcheng
 * 中文名：郭小成
-* Email: letcheng@ruyuapp.com
+* Email: letcheng2010@gmail.com
 * 研究方向：Java 架构，爬虫，并发编程和大数据处理，自然语言处理等
 * 项目: [如鱼](http://www.ruyuapp.com)， NSFC-广东联合基金重点项目(Grant No. U1301252)， 国家自然科学基金面上项目(Grant No. 61272543)， 国家科技支撑计划(Grant No. 2013BAB06B04)
 * 专利: [一种面向多用户协作的数据挖掘平台的构建方法(CN 201410059806)](http://www.soopat.com/Patent/201410059806)， [一种比热容法非接触测量悬移质含沙量装置(CN 201310398082)](http://www.soopat.com/Patent/201310398082)， [男士小便池的自动冲水装置、男士小便池及冲水方法(CN 201410132807)](http://www.soopat.com/Patent/201410132807)
