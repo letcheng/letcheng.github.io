@@ -14,7 +14,7 @@ Java的随机是伪随机，实际上就是一个数字（种子）经过运算�
 
 ### java.lang.Math.Random 和 jang.util.Random
 
-> java.lang.Math.Random 实际上是对 java.util.Random 的封装，其返回值[0.0,1.0]
+> java.lang.Math.Random 实际上是对 java.util.Random 的封装，其返回值[0.0,1.0)
 
 ```java
 public static double random() { //java.lang.Math.Random 的源代码
@@ -23,6 +23,14 @@ public static double random() { //java.lang.Math.Random 的源代码
    return rnd.nextDouble();
 }
 ```
+
+### 生成指定范围的随机数
+
+rand.nextInt(100) 生成的随机数值域为[0,99]
+所以rand.nextInt(100) + 1 生成的随机数值域为[1,100];
+所以rand.nextInt(100 - 2 + 1) + 2 生成的随机数为[2,100];
+所以生成指定范围的数据数为 rand.nextInt(max - min + 1) + min;
+rand.nextInt(max)%(max-min+1) + min;
 
 ### 随机数的生成 （携程面试题）
 
@@ -33,17 +41,19 @@ public static double random() { //java.lang.Math.Random 的源代码
 ```java
    int nums[] = {1,2,3...100};
    for(int i=nums.length-1;i>0;i--){
-       int rand = new Random().nextInt(i); // Math.floor(Math.random()*i)
+       int rand = new Random().nextInt(i); 
        int tmp = nums[i];
        nums[i] = nums[rand];
        nums[rand] = tmp;
    }
 ```
 
+从前面一直往后面确定随机数
+
 ```java
     int nums[] = {1,2,3...100};
     for(int i=0;i<nums.length;i++){
-        int rand = i + new Random().nextInt(nums.length - i);
+        int rand = i + new Random().nextInt(nums.length - i + 1);
         int tmp = nums[i];
         nums[i] = nums[rand];
         nums[rand] = tmp;
