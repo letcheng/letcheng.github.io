@@ -26,11 +26,10 @@ public static double random() { //java.lang.Math.Random 的源代码
 
 ### 生成指定范围的随机数
 
-rand.nextInt(100) 生成的随机数值域为[0,99]
-所以rand.nextInt(100) + 1 生成的随机数值域为[1,100];
-所以rand.nextInt(100 - 2 + 1) + 2 生成的随机数为[2,100];
-所以生成指定范围的数据数为 rand.nextInt(max - min + 1) + min;
-rand.nextInt(max)%(max-min+1) + min;
+* rand.nextInt(100) 生成的随机数值域为[0,99]
+* 所以rand.nextInt(100) + 1 生成的随机数值域为[1,100];
+* 所以rand.nextInt(100 - 2 + 1) + 2 生成的随机数为[2,100];
+* 所以生成指定范围的数据数为 rand.nextInt(max - min + 1) + min 或者 rand.nextInt(max)%(max-min+1) + min;
 
 ### 随机数的生成 （携程面试题）
 
