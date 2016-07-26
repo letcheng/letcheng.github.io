@@ -33,7 +33,7 @@ public static double random() { //java.lang.Math.Random 的源代码
 
 ### 随机数的生成 （携程面试题）
 
-随机生成 100 个随机数(1,100)
+随机生成 100 个随机数[1,100]
 
 从后面一直往前面确定随机数
 
