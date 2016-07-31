@@ -27,3 +27,20 @@ while ((tmp = bufferedReader.readLine() )!= null){
 }
 bufferedReader.close();
 ```
+
+### UDP/IP + BIO
+
+```java
+DatagramSocket clientSocket = new DatagramSocket();
+    String datas = "Hello World";
+    DatagramPacket sendPacket = new DatagramPacket(datas.getBytes(),datas.getBytes().length, InetAddress.getLocalHost(),1234);
+    clientSocket.send(sendPacket);
+```
+
+```java
+DatagramSocket serverSocket = new DatagramSocket(1234);
+byte[] buffer = new byte[65507];
+DatagramPacket recevicePacket = new DatagramPacket(buffer,buffer.length);
+serverSocket.receive(recevicePacket);
+System.out.println(new String(buffer));
+```
