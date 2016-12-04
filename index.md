@@ -2,8 +2,7 @@
 layout: post
 title: 关于我
 ---
-* 英文名：letcheng
-* 中文名：郭小成
+* 姓名：letcheng
 * Email: letcheng2010@gmail.com
 * 研究方向：Java 架构，爬虫，并发编程和大数据处理，自然语言处理等
 * 项目: [如鱼](http://www.ruyuapp.com)， NSFC-广东联合基金重点项目(Grant No. U1301252)， 国家自然科学基金面上项目(Grant No. 61272543)， 国家科技支撑计划(Grant No. 2013BAB06B04)
